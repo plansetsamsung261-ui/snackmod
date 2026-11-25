@@ -1,11 +1,19 @@
-plugins {
-    id 'java'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:6.0.+'
+    }
 }
+
+apply plugin: 'java'
+apply plugin: 'net.minecraftforge.gradle'
 
 version = '1.0.0'
 group = 'com.example.snackmod'
-base { archivesName = 'snackmod' }
+archivesBaseName = 'snackmod'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
